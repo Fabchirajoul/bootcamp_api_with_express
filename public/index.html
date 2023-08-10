@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOOTCAMP API</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="index.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+
+<body class="container">
+
+    <div class="card" x-data="BOOTCAMPEXPRESSAPI">
+        <main>
+            <section>
+                <div class="row">
+                    <div class="col l12 m12 s12" style="text-align: center; background-color: aqua;">
+                        <p x-text="title"></p>
+
+                    </div>
+
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="input-field col l6 m12 s12" style="text-align: center; background-color: bisque;">
+                        <!-- Greet function starts here -->
+                        <h5 x-text="titlegreet"></h5>
+
+
+                        <form x-on:submit.prevent="this.nameUser=nameUser, selectedLanguage=languages.value">
+                            <label><b>Plese Enter your Username and choose a Language</b></label>
+                            <br>
+                            <input type="text" x-model="nameUser" placeholder="Click to enter your name">
+                            <br>
+                            <select class="browser-default" name="languages" id="languages">
+                                <option value="" disabled selected>Choose a language</option>
+                                <option value="Hello">English</option>
+                                <option value="Bonjour">French</option>
+                                <option value="Habari">Swahili</option>
+                                <option value="Kunjani">Zulu</option>
+
+                            </select><br>
+                            <button x-on:click="greet">Greet</button>
+                        </form>
+                        <div><span><label x-text="selectedLanguage"></label></span>
+                            <span x-text="greetPhrase"></span>
+                        </div>
+
+                    </div>
+
+                    <!-- Greet function ends here -->
+
+                    <!-- Word game starts here -->
+
+                    <div class="input-field col l6 m12 s12" style="text-align: center; background-color: blueviolet;">
+                        <h5 x-text="titlewordgame"></h5>
+
+                        <form x-on:submit.prevent="this.str=str">
+                            <label>Enter a sentence</label>
+                            <br>
+                            <input type="text" x-model="str" placeholder="Click to enter Sentence here to calculate">
+                            <br>
+                            <button x-on:click="wordGame">Submit</button>
+                        </form>
+                        <div>
+                            <label>Shortest Word: </label>
+                            <span x-text="short"></span>
+                        </div>
+
+                        <div>
+                            <label>Longest Word: </label>
+                            <span x-text="long"></span>
+                        </div>
+                        <div>
+                            <label>Sentence Length:</label>
+                            <span x-text="sentenceLength"></span>
+                        </div>
+
+                    </div>
+
+                    <!-- Word game ends here -->
+
+                </div>
+            </section>
+
+            <section>
+                <div class="row">
+                    <div class="input-field col l6 m12 s12" style="text-align: center; background-color: aquamarine;">
+                        <!-- Enough airtime starts here -->
+                        <h5 x-text="titleairtime"></h5><br>
+                        <form x-on:submit.prevent="this.atStr=atStr, this.AT=AT">
+                            <label>Enter airtime available</label>
+                            <br>
+                            <input type="number" x-model="AT" >
+                            <br>
+                            <label>Enter string in format 'call,data,sms'</label>
+                            <br>
+                            <input type="text" x-model="atStr" placeholder="Click to submit the airtime usage">
+                            <br>
+                            <button x-on:click="enoughAT">Submit</button>
+                        </form>
+                        <br>
+                        <span x-text="airStr"></span>
+
+                    </div>
+                    <!-- Enough airtime ends here -->
+                    <div class="input-field col l6 m12 s12"
+                        style="text-align: center; background-color: rgba(127, 187, 255, 0.707);">
+                        <!-- Transport fee starts here -->
+                        <h5 x-text="titleTransportFee"></h5><br><br>
+                        <form x-model="daytime" name="time" id="time">
+                            <label for="time">Choose a time of day:</label>
+                            <select class="browser-default" name="languages" id="languages">
+                                <option value="" disabled selected>Choose a Shift</option>
+                                <option value="morning">Morning</option>
+                                <option value="afternoon">Afternoon</option>
+                                <option value="other">Night</option>
+
+                            </select><br>
+                            <button @click="fee">Submit</button>
+
+                        </form><br><br><br>
+                        <div><span x-text="price"></span></div>
+
+                    </div>
+                    <!-- Transport fee ends here -->
+                </div>
+            </section>
+        </main>
+
+
+        <script src="code.js" async defer></script>
+
+
+</body>
+<footer class="page-footer">
+
+    <div class="footer-copyright">
+        <div class="row">
+            <div class="col m8 l12 s12" style="text-align: center;">
+                © 2023 Copyright Reserved<br>
+                <a class="grey-text text-lighten-4 center" href="#!">Fabchi RJ&nbsp;&nbsp;
+                    <strong>Tel:</strong> +27633829963&nbsp;&nbsp; <strong>Email:</strong>
+                    fabchirajoul@gmail.com</a><br>
+                <a class="grey-text text-lighten-4 right" href="#!">UJ & ACCENTURE WORK READINESS
+                    PROGRAM</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</div>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <main x-data="BOOTCAMPEXPRESSAPI">
+        <p x-text="title"></p>
+
+        <form x-on:submit.prevent="this.nameUser=nameUser, selectedLanguage=languages.value">
+            <label>Please enter your name</label>
+            <br>
+            <input type="text" x-model="nameUser">
+            <br>
+
+
+            
+            <label for="languages">Choose a Language:</label>
+            <select name="languages" id="languages">
+                <option value="Hello">English</option>
+                <option value="Habari">Swahili</option>
+                <option value="Kunjani">Zulu</option>
+                <option value="Olyotyo">Luganda</option>
+            </select>
+
+
+
+            <br>
+            <button x-on:click="greet">Greet</button>
+        </form>
+        <div><span><label x-text="selectedLanguage"></label></span>
+            <span x-text="greetPhrase"></span>
+        </div>
+
+
+
+
+
+    </main>
+    
+    <script src="code.js" async defer></script>
+</body>
+</html>
