@@ -42,7 +42,7 @@
                         <form x-on:submit.prevent="this.nameUser=nameUser, selectedLanguage=languages.value">
                             <label><b>Plese Enter your Username and choose a Language</b></label>
                             <br>
-                            <input type="text" x-model="nameUser" placeholder="Click to enter your name">
+                            <input type="text" x-model="nameUser" placeholder="Click to enter your names">
                             <br>
                             <select class="browser-default" name="languages" id="languages">
                                 <option value="" disabled selected>Choose a language</option>
@@ -136,6 +136,27 @@
 
                     </div>
                     <!-- Transport fee ends here -->
+                </div>
+            </section>
+
+            <section>
+                <div class="row">
+                    <div class="input-field col l6 m12 s12" style="text-align: center; background-color: beige;">
+                        <!-- Phone bill starts here -->
+                        <h5 x-text="titlePhoneBill"></h5>
+                        <form x-on:submit.prevent="this.strList=strList">
+                            <label>Enter string in format 'call,data,sms'</label>
+                            <br>
+                            <input type="text" x-model="strList">
+                            <br>
+                            <button x-on:click="bill">Submit</button>
+    
+                        </form>
+                        <br>
+                        <span x-text="returnString"></span>
+
+                    </div>
+
                 </div>
             </section>
         </main>

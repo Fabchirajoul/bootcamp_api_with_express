@@ -7,6 +7,7 @@ import shortestWord from './bootcamp/shortestWord.js';
 import wordLengths from './bootcamp/wordLengths.js';
 import enoughairtime from './bootcamp/enoughAirtime.js';
 import transportFee from './bootcamp/transportFee.js';
+import totalPhoneBill from './bootcamp/totalPhoneBill.js';
 
 
 
@@ -96,8 +97,25 @@ app.get("/api/transportFee", function (req, res) {
     );
 });
 // Transport fee ends here
+// Phone Bill starts here
 
-let PORT = process.env.PORT || 3011;
+app.get("/api/totalphonebill", function (req, res) {
+    const sentence = req.query.sentence
+    if (!sentence) {
+        res.json({
+            error: "sentence not found!"
+        })
+    }
+
+    res.json(
+        {
+            "totalphonebill": totalPhoneBill(sentence)
+        }
+    );
+});
+// Phone Bill ends here
+
+let PORT = process.env.PORT || 3060;
 
 app.listen(PORT, function () {
     console.log('App starting on port', PORT)

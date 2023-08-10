@@ -6,6 +6,7 @@ document.addEventListener("alpine:init", () => {
       titlewordgame: "MY WORD GAME API",
       titleairtime: "MY ENOUGH AIRTIME API",
       titleTransportFee: "MY TRANSPORT FEE API",
+      titlePhoneBill: "MY PHONE BILL API",
       sentence: "",
       nameUser: "",
       greetPhrase: "",
@@ -65,6 +66,16 @@ document.addEventListener("alpine:init", () => {
         });
       },
       // Transport fee ends here
-    };
+      // Total phone bill starts here
+
+      bill() {
+        axios
+            .get(`/api/totalphonebill?sentence=${this.strList}`)
+            .then((result) => {
+                this.returnString = result.data.totalphonebill
+            })
+    }
+      // Total phone bill ends here
+    }
   });
 });
