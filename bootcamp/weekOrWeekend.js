@@ -1,4 +1,4 @@
-function weekOrWeekend(dayofweek){
+export default function weekOrWeekend(dayofweek){
 switch(dayofweek){
   case "Monday":
    return "week";

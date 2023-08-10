@@ -8,7 +8,7 @@ import wordLengths from './bootcamp/wordLengths.js';
 import enoughairtime from './bootcamp/enoughAirtime.js';
 import transportFee from './bootcamp/transportFee.js';
 import totalPhoneBill from './bootcamp/totalPhoneBill.js';
-import totalPhoneBill from './bootcamp/weekOrWeekend.js';
+import weekOrWeekend from './bootcamp/weekOrWeekend.js';
 
 
 
@@ -126,7 +126,7 @@ app.get("/api/weekOrWeekend", function (req, res) {
 
     res.json(
         {
-            "weekorweekend": weekOrWeekend(dayofweek)
+            "weekorweekend": weekOrWeekend(weekssss)
         }
     );
 });
