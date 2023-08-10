@@ -24,7 +24,7 @@ document.addEventListener("alpine:init", () => {
       short: "",
       sentenceLength: 0,
 
-      // Greet section starts here
+      // 1 Greet section starts here
       greet() {
         axios
           // .get(`http://localhost:3011/api/greet?name=${this.nameUser}`)
@@ -38,7 +38,7 @@ document.addEventListener("alpine:init", () => {
 
       // Greet section ends here
 
-      // Word game starts here
+      // 2 Word game starts here
 
       wordGame() {
         axios.get(`/api/word_game?sentence=${this.str}`).then((result) => {
@@ -49,7 +49,7 @@ document.addEventListener("alpine:init", () => {
       },
       // Word game ends  here
 
-      // Enough airtime starts here
+      // 3 Enough airtime starts here
 
       enoughAT() {
         axios
@@ -59,14 +59,14 @@ document.addEventListener("alpine:init", () => {
           });
       },
       // Enough airtime ends here
-      // Transfort fee starts here
+      // 4 Transfort fee starts here
       fee() {
         axios.get(`/api/transportFee?day=${this.daytime}`).then((result) => {
           this.price = result.data.transport;
         });
       },
       // Transport fee ends here
-      // Total phone bill starts here
+      // 5 Total phone bill starts here
 
       bill() {
         axios
