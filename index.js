@@ -8,6 +8,7 @@ import wordLengths from './bootcamp/wordLengths.js';
 import enoughairtime from './bootcamp/enoughAirtime.js';
 import transportFee from './bootcamp/transportFee.js';
 import totalPhoneBill from './bootcamp/totalPhoneBill.js';
+import totalPhoneBill from './bootcamp/weekOrWeekend.js';
 
 
 
@@ -114,6 +115,23 @@ app.get("/api/totalphonebill", function (req, res) {
     );
 });
 // Phone Bill ends here
+// Weekend or weekday starts here
+app.get("/api/weekOrWeekend", function (req, res) {
+    const dayofweek= req.query.day
+    if (!dayofweek) {
+        res.json({
+            error: "incorrect day of the week!"
+        })
+    }
+
+    res.json(
+        {
+            "weekorweekend": weekOrWeekend(dayofweek)
+        }
+    );
+});
+
+// Weekend or weekday ends here
 
 let PORT = process.env.PORT || 3060;
 

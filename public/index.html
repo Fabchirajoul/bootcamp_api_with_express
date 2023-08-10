@@ -15,12 +15,17 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+    </style>
 
 </head>
 
 <body class="container">
 
-    <div class="card" x-data="BOOTCAMPEXPRESSAPI">
+    <div class="card" x-data="BOOTCAMPEXPRESSAPI" x-cloak>
         <main>
             <section>
                 <div class="row">
@@ -102,7 +107,7 @@
                         <form x-on:submit.prevent="this.atStr=atStr, this.AT=AT">
                             <label>Enter airtime available</label>
                             <br>
-                            <input type="number" x-model="AT" >
+                            <input type="number" x-model="AT">
                             <br>
                             <label>Enter string in format 'call,data,sms'</label>
                             <br>
@@ -115,7 +120,8 @@
 
                     </div>
                     <!-- Enough airtime ends here -->
-                    <div class="input-field col l6 m12 s12" style="text-align: center; background-color: rgba(127, 187, 255, 0.707);">
+                    <div class="input-field col l6 m12 s12"
+                        style="text-align: center; background-color: rgba(127, 187, 255, 0.707);">
                         <!-- Transport fee starts here -->
                         <h5 x-text="titleTransportFee"></h5><br><br>
                         <form x-on:submit.prevent="this.daytime = time.value">
@@ -148,13 +154,36 @@
                             <input type="text" x-model="strList">
                             <br>
                             <button x-on:click="bill">Submit</button>
-    
+
                         </form>
                         <br>
                         <span x-text="returnString"></span>
 
                     </div>
+                    <!-- Phone bill ends here -->
+                    <!-- Weekday starts here -->
+                    <div class="input-field col l6 m12 s12" style="text-align: center; background-color: aquamarine;">
+                        <h5 x-text="titleWeekDay"></h5>
+                        <form x-on:submit.prevent="this.weekss=weekssss">
+                            <label>Choose the day of the week</label>
+                            <select class="browser-default" x-model="weekss" name="dayofweek" id="dayofweek">
+                                <option value="" disabled selected>Choose a day</option>
+                                <option value="week">Monday</option>
+                                <option value="week">Tuesday</option>
+                                <option value="week">Wednesday</option>
+                                <option value="week">Thursday</option>
+                                <option value="week">Friday</option>
+                                <option value="weekend">Saturday</option>
+                                <option value="weekend">Sunday</option>
 
+                            </select><br>
+                            <button x-on:click="weeks">Submit</button>
+                        </form>
+                        <br>
+                        <span x-text="weekssss"></span>
+
+                    </div>
+                    <!-- Weekday ends here -->
                 </div>
             </section>
         </main>

@@ -7,6 +7,7 @@ document.addEventListener("alpine:init", () => {
       titleairtime: "MY ENOUGH AIRTIME API",
       titleTransportFee: "MY TRANSPORT FEE API",
       titlePhoneBill: "MY PHONE BILL API",
+      titleWeekDay: "MY WEEKDAY API",
       sentence: "",
       nameUser: "",
       greetPhrase: "",
@@ -23,6 +24,8 @@ document.addEventListener("alpine:init", () => {
       long: "",
       short: "",
       sentenceLength: 0,
+      weekss:"",
+      weekssss:"",
 
       // 1 Greet section starts here
       greet() {
@@ -41,7 +44,9 @@ document.addEventListener("alpine:init", () => {
       // 2 Word game starts here
 
       wordGame() {
-        axios.get(`/api/word_game?sentence=${this.str}`).then((result) => {
+        axios
+        .get(`/api/word_game?sentence=${this.str}`)
+        .then((result) => {
           this.long = result.data.longestWord;
           this.short = result.data.shortestWord;
           this.sentenceLength = result.data.length;
@@ -61,7 +66,9 @@ document.addEventListener("alpine:init", () => {
       // Enough airtime ends here
       // 4 Transfort fee starts here
       fee() {
-        axios.get(`/api/transportFee?day=${this.daytime}`).then((result) => {
+        axios
+        .get(`/api/transportFee?day=${this.daytime}`)
+        .then((result) => {
           this.price = result.data.transport;
         });
       },
@@ -74,8 +81,19 @@ document.addEventListener("alpine:init", () => {
             .then((result) => {
                 this.returnString = result.data.totalphonebill
             })
-    }
+    },
       // Total phone bill ends here
+      // weekend or weekday starts here
+      weeks() {
+        axios
+              .get(`/weekOrWeekend?dayofweek=${this.weekss}`)
+              .then((result)=>{
+
+                this.weekssss = result.data.weekorweekend
+              })
+
+      }
+      // weekend or weekday ends here
     }
   });
 });
