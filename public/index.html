@@ -118,9 +118,9 @@
                     <div class="input-field col l6 m12 s12" style="text-align: center; background-color: rgba(127, 187, 255, 0.707);">
                         <!-- Transport fee starts here -->
                         <h5 x-text="titleTransportFee"></h5><br><br>
-                        <form x-model="daytime" name="time" id="time">
+                        <form x-on:submit.prevent="this.daytime = time.value">
                             <label for="time">Choose a time of day:</label>
-                            <select class="browser-default" name="time" id="time">
+                            <select class="browser-default" x-model="daytime" name="time" id="time">
                                 <option value="" disabled selected>Choose a Shift</option>
                                 <option value="morning">Morning</option>
                                 <option value="afternoon">Afternoon</option>
