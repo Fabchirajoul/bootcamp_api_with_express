@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOTCAMP API</title>
-    <script src="index.js"></script>
+    <!-- <script src="index.js"></script> -->
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Compiled and minified CSS -->
@@ -164,7 +164,7 @@
                     <!-- Weekday starts here -->
                     <div class="input-field col l6 m12 s12" style="text-align: center; background-color: aquamarine;">
                         <h5 x-text="titleWeekDay"></h5>
-                        <form x-on:submit.prevent="this.weekss=weekssss">
+                        <form x-on:submit.prevent="this.weekss=weekss">
                             <label>Choose the day of the week</label>
                             <select class="browser-default" x-model="weekss" name="dayofweek" id="dayofweek">
                                 <option value="" disabled selected>Choose a day</option>

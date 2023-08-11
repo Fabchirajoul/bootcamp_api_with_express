@@ -126,7 +126,7 @@ app.get("/api/weekOrWeekend", function (req, res) {
 
     res.json(
         {
-            "weekorweekend": weekOrWeekend(weekssss)
+            "weekorweekend": weekOrWeekend(dayofweek)
         }
     );
 });

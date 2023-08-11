@@ -26,6 +26,7 @@ document.addEventListener("alpine:init", () => {
       sentenceLength: 0,
       weekss:"",
       weekssss:"",
+      dayofweek:"",
 
       // 1 Greet section starts here
       greet() {
