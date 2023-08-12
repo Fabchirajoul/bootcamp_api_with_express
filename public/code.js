@@ -37,7 +37,9 @@ document.addEventListener("alpine:init", () => {
           .then((result) => {
             console.log(this.nameUser);
             this.greetPhrase = result.data.greet;
-          });
+            setTimeout(() => (this.greetPhrase = "",this.selectedLanguage= "",this.nameUser=""), 3000);
+        });
+          
       },
 
       // Greet section ends here
@@ -51,7 +53,10 @@ document.addEventListener("alpine:init", () => {
           this.long = result.data.longestWord;
           this.short = result.data.shortestWord;
           this.sentenceLength = result.data.length;
+          setTimeout(() => (this.long = "",this.short= "",this.sentenceLength="",this.str=""), 3000);
+         
         });
+        
       },
       // Word game ends  here
 
@@ -62,6 +67,7 @@ document.addEventListener("alpine:init", () => {
           .get(`/api/enoughairtime?sentence=${this.atStr}&amount=${this.AT}`)
           .then((result) => {
             this.airStr = result.data.enoughairtime;
+            setTimeout(() => (this.airStr = "",this.atStr="",this.AT=""), 3000);
           });
       },
       // Enough airtime ends here
@@ -71,6 +77,7 @@ document.addEventListener("alpine:init", () => {
         .get(`/api/transportFee?day=${this.daytime}`)
         .then((result) => {
           this.price = result.data.transport;
+          setTimeout(() => (this.price = ""), 3000);
         });
       },
       // Transport fee ends here
@@ -80,8 +87,9 @@ document.addEventListener("alpine:init", () => {
         axios
             .get(`/api/totalphonebill?sentence=${this.strList}`)
             .then((result) => {
-                this.returnString = result.data.totalphonebill
-            })
+                this.returnString = result.data.totalphonebill;
+                setTimeout(() => (this.returnString = ""), 3000);
+            });
     },
       // Total phone bill ends here
       // weekend or weekday starts here
