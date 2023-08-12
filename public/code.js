@@ -88,7 +88,7 @@ document.addEventListener("alpine:init", () => {
             .get(`/api/totalphonebill?sentence=${this.strList}`)
             .then((result) => {
                 this.returnString = result.data.totalphonebill;
-                setTimeout(() => (this.returnString = ""), 3000);
+                setTimeout(() => (this.returnString = "",this.strList=""), 3000);
             });
     },
       // Total phone bill ends here

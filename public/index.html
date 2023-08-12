@@ -108,7 +108,7 @@
                         <form x-on:submit.prevent="this.atStr=atStr, this.AT=AT">
                             <label>Enter airtime available</label>
                             <br>
-                            <input type="number" x-model="AT">
+                            <input type="number" value="" x-model="AT" placeholder="Click to enter Amount">
                             <br>
                             <label>Enter string in format 'call,data,sms'</label>
                             <br>
@@ -152,7 +152,7 @@
                         <form x-on:submit.prevent="this.strList=strList">
                             <label>Enter string in format 'call,data,sms'</label>
                             <br>
-                            <input type="text" x-model="strList">
+                            <input type="text" x-model="strList" placeholder="Click to enter string in string form">
                             <br>
                             <button x-on:click="bill">Submit</button>
 
