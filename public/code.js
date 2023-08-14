@@ -25,8 +25,7 @@ document.addEventListener("alpine:init", () => {
       short: "",
       sentenceLength: 0,
       weekss:"",
-      weekssss:"",
-      dayofweek:"",
+      verdict:"",
 
       // 1 Greet section starts here
       greet() {
@@ -95,10 +94,10 @@ document.addEventListener("alpine:init", () => {
       // weekend or weekday starts here
       weeks() {
         axios
-              .get(`/weekOrWeekend?dayofweek=${this.weekss}`)
+              .get(`/weekOrWeekend?dayOfWeek=${this.weekss}`)
               .then((result)=>{
 
-                this.weekssss = result.data.weekorweekend
+                this.verdict = result.data.weekorweekend
               })
 
       }

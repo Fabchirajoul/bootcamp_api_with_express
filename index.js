@@ -117,8 +117,8 @@ app.get("/api/totalphonebill", function (req, res) {
 // Phone Bill ends here
 // Weekend or weekday starts here
 app.get("/api/weekOrWeekend", function (req, res) {
-    const dayofweek= req.query.day
-    if (!dayofweek) {
+    const dayOfWeek= req.query.dayOfWeek
+    if (!dayOfWeek) {
         res.json({
             error: "incorrect day of the week!"
         })
@@ -126,7 +126,7 @@ app.get("/api/weekOrWeekend", function (req, res) {
 
     res.json(
         {
-            "weekorweekend": weekOrWeekend(dayofweek)
+            "weekorweekend": weekOrWeekend(dayOfWeek)
         }
     );
 });

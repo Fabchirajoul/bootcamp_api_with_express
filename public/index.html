@@ -79,16 +79,16 @@
                             <br>
                             <button x-on:click="wordGame">Submit</button>
                         </form>
-                        <div>
+                        <div x-show="short.length>1">
                             <label>Shortest Word: </label>
                             <span x-text="short"></span>
                         </div>
 
-                        <div>
+                        <div x-show="long.length>1">
                             <label>Longest Word: </label>
                             <span x-text="long"></span>
                         </div>
-                        <div>
+                        <div x-show="sentenceLength>0">
                             <label>Sentence Length:</label>
                             <span x-text="sentenceLength"></span>
                         </div>
@@ -165,23 +165,23 @@
                     <!-- Weekday starts here -->
                     <div class="input-field col l6 m12 s12" style="text-align: center; background-color: aquamarine;">
                         <h5 x-text="titleWeekDay"></h5>
-                        <form x-on:submit.prevent="this.weekss=weekss">
-                            <label>Choose the day of the week</label>
-                            <select class="browser-default" x-model="weekss" name="dayofweek" id="dayofweek">
+                        <form x-on:submit.prevent="this.weekss=times.value">
+                            <label for="times">Choose the day of the week</label>
+                            <select class="browser-default" x-model="weekss" name="times" id="times">
                                 <option value="" disabled selected>Choose a day</option>
-                                <option value="week">Monday</option>
-                                <option value="week">Tuesday</option>
-                                <option value="week">Wednesday</option>
-                                <option value="week">Thursday</option>
-                                <option value="week">Friday</option>
-                                <option value="weekend">Saturday</option>
-                                <option value="weekend">Sunday</option>
+                                <option value="Week">Monday</option>
+                                <option value="Week">Tuesday</option>
+                                <option value="Week">Wednesday</option>
+                                <option value="Week">Thursday</option>
+                                <option value="Week">Friday</option>
+                                <option value="Weekend">Saturday</option>
+                                <option value="Weekend">Sunday</option>
 
                             </select><br>
                             <button x-on:click="weeks">Submit</button>
                         </form>
                         <br>
-                        <span x-text="weekssss"></span>
+                        <span x-text="verdict"></span>
 
                     </div>
                     <!-- Weekday ends here -->
