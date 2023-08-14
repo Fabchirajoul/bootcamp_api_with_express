@@ -93,11 +93,13 @@ document.addEventListener("alpine:init", () => {
       // Total phone bill ends here
       // weekend or weekday starts here
       weeks() {
+        // console.log("Testing something")
         axios
-              .get(`/weekOrWeekend?dayOfWeek=${this.weekss}`)
+              .get(`/api/weekOrWeekend?dayOfWeek=${this.weekss}`)
               .then((result)=>{
-
-                this.verdict = result.data.weekorweekend
+                // console.log(result)
+                this.verdict = result.data.weekorweekend;
+                setTimeout(() => (this.verdict = ""), 3000);
               })
 
       }

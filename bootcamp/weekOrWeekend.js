@@ -28,20 +28,26 @@
 // }
 
 export default function weekOrWeekend(dayOfWeek) {
+
+  console.log('INPUT:',dayOfWeek)
   let verdict = "";
   if (dayOfWeek == "Monday") {
-    return verdict = "Week";
+    return verdict = "It is a Week day";
   } else if (dayOfWeek == "Tuesday") {
-    return verdict = "Week";
+    return verdict = "It is a Week day";
   } else if (dayOfWeek == "Wednesday") {
-    return verdict = "Week";
+    return verdict = "It is a Week day";
   } else if (dayOfWeek == "Thursday") { 
-    return verdict = "Week";
+    return verdict = "It is a Week day";
   } else if (dayOfWeek == "Friday") {
-    return verdict = "Week";
+    return verdict = "It is a Week day";
   } else if (dayOfWeek == "Saturday") {
-    return verdict = "Weekend";
+    return verdict = "It is a Weekend";
   } else if (dayOfWeek == "Sunday") {
-    return verdict = "Weekend";
+    return verdict = "It is a Weekend";
   } else return verdict;
+
+
 }
+
+

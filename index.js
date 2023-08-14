@@ -118,6 +118,7 @@ app.get("/api/totalphonebill", function (req, res) {
 // Weekend or weekday starts here
 app.get("/api/weekOrWeekend", function (req, res) {
     const dayOfWeek= req.query.dayOfWeek
+    // console.log(weekOrWeekend(dayOfWeek))
     if (!dayOfWeek) {
         res.json({
             error: "incorrect day of the week!"
